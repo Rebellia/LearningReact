@@ -1,15 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const myelement = (
-  <div>
-    <h1>I am a Header.</h1>
-    <h1>I am a Header too.</h1>
-  </div>
-);
+class Football extends React.Component {
+  shoot(a) {
+    alert(a);
+  }
+  render() {
+    return (
+      <button
+        onClick={this.shoot(this, "Goal")}
+      >Take the shot!</button>
+    );
+  }
+}
 
-
-
-
-ReactDOM.render(myelement, document.getElementById('root'));
+ReactDOM.render(<Football />, document.getElementById('root'));
 
