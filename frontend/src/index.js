@@ -2,12 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-class MyForm extends React.Component{
+class ItemList extends React.Component {
   constructor() {
     super();
+    //Initialize a state with an empty array
     this.state = {
-      inputText: '', //Text inside the input box
-      headerState: '', //Text of the header
+      items: [], //array of text
+      inputText: '', //text from the input box
     };
   }
 
@@ -15,24 +16,28 @@ class MyForm extends React.Component{
     this.setState({inputText: event.target.value}); //Grabs the text of the input box
   }
 
-
-  buttonChangeText = (event) => {
+  addThingToList = (event) => {
     event.preventDefault(); //Stops page from refreshing after clicking the button
-    this.setState({headerState: this.state.inputText}); //Sets the text of the header
+    var strList = this.state.items; //grabs the array
+    strList.push(this.state.inputText); //adds string to the array
+    this.setState({items: strList}); //set the state of the array to the current array
   }
+
+  renderItems = () => (
+    this.state.items.map(itm => <p>{itm}</p>)
+  );
   
   render() {
     return(
       <form>
-        <h1>{this.state.headerState}</h1>
-        <p>Enter your text: </p>
+        <p>Enter your text:</p>
         <input onChange={this.changeText}/>
-        <button onClick={this.buttonChangeText}>Submit!</button>
+        <button onClick={this.addThingToList}>Add Item</button>
+        {this.renderItems()}
       </form>
     );
   }
-  
 }
 
 
-ReactDOM.render(<MyForm/>, document.getElementById('root'));
+ReactDOM.render(<ItemList/>, document.getElementById('root'));
