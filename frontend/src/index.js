@@ -23,6 +23,7 @@ class ItemList extends React.Component {
     this.setState({items: strList}); //set the state of the array to the current array
   }
 
+  //For every item in the array, return a paragraph element with that item in it
   renderItems = () => (
     this.state.items.map(itm => <p>{itm}</p>)
   );
