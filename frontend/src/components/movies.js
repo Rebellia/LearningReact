@@ -12,7 +12,7 @@ export default class Movies extends Component {
   }
 
   componentDidMount() {
-    axios.get("http://localhost:3000/getMovies").then(response => {
+    axios.get("http://localhost:5000/getMovies").then(response => {
       this.setState({data: response.data});
     });
   }
@@ -35,8 +35,8 @@ export default class Movies extends Component {
             {this.state.buttonClicked ? this.state.data.map(data => {
                     return (
                       <React.Fragment>
-                        <p>{" "}<b>name</b> : {data.name}</p>
-                        <p><b>age</b> : {data.age}</p>
+                        <p><b>Title</b> : {data.title}</p>
+                        <p><b>Genre</b> : {data.genre}</p>
                         <hr />
                       </React.Fragment>
                     );

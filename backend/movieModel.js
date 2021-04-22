@@ -7,8 +7,11 @@ const reqiredString = {
 
 const movieSchema = mongoose.Schema({
     title: reqiredString,
-    Genre: reqiredString,
-    Date: {type: Date(), required: true},
+    genre: reqiredString,
+    date_added: {
+        type: Date,
+        required: true
+    },
 })
 
 //module.exports = mongoose.model('avengers', movieSchema)

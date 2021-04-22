@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Movies from "./components/MovieList";
+import Movies from "./components/movies";
 
 function App() {
   return <Movies />;
