@@ -1,2 +1,5 @@
-How to run: npm run dev
--- This concurrently runs npm start and npm run client
+Command to run:
+Backend: npm run devStart
+
+Following this tutorial from Web Dev Simplified:
+https://www.youtube.com/watch?v=qj2oDkvc4dQ
